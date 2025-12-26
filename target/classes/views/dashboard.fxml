@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.secs.client.controllers.DashboardController"
+      alignment="CENTER" spacing="20"
+      style="-fx-padding: 50; -fx-background-color: linear-gradient(to bottom right, #2c3e50, #3498db);">
+
+    <Label text="SECS Dashboard"
+           style="-fx-font-size: 36px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+    <Label fx:id="lblWelcome"
+           style="-fx-font-size: 18px; -fx-text-fill: #ecf0f1;"/>
+
+    <VBox spacing="10" alignment="CENTER"
+          style="-fx-padding: 30; -fx-background-color: rgba(255,255,255,0.9); -fx-background-radius: 10;">
+
+        <Label text="Welcome to SECS Dashboard"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+        <Label text="This is a placeholder dashboard."
+               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+
+        <Button text="Logout" onAction="#handleLogout"
+                style="-fx-font-size: 14px; -fx-pref-width: 100; -fx-pref-height: 40;"/>
+    </VBox>
+</VBox>
+        <!-- Developer Signature -->
+<HBox alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+<Label text="SECS v1.0 | Developer: Kuei Poch Kuei | Dilla University CS"
+       style="-fx-text-fill: #666666; -fx-font-size: 10px; -fx-font-style: italic;"/>
+</HBox>

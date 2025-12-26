@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:controller="com.secs.client.controllers.LoginController"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:id="loginContainer"
+      alignment="CENTER"
+      spacing="30"
+      style="-fx-padding: 50; -fx-background-color: linear-gradient(to bottom right, #1a2980, #26d0ce);">
+
+    <!-- Server Status Indicator -->
+    <VBox alignment="CENTER" spacing="5">
+        <Label fx:id="lblServerStatus"
+               style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 5 10 5 10; -fx-background-radius: 15; -fx-background-color: rgba(0,0,0,0.2);"/>
+        <Label text="SECS"
+               style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);"/>
+        <Label text="Secure Exam Control System"
+               style="-fx-font-size: 18px; -fx-text-fill: #e0e0e0;"/>
+    </VBox>
+
+    <!-- Login Form -->
+    <VBox spacing="20" alignment="CENTER"
+          style="-fx-padding: 40; -fx-background-color: rgba(255,255,255,0.95); -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 20, 0, 0, 0);">
+
+        <Label text="Login to Your Account"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+        <!-- Username Field -->
+        <VBox spacing="5">
+            <Label text="Username" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d; -fx-font-weight: bold;"/>
+            <TextField fx:id="txtUsername"
+                       promptText="Enter username or email"
+                       style="-fx-font-size: 14px; -fx-pref-width: 300; -fx-pref-height: 45;
+                              -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 10;"/>
+        </VBox>
+
+        <!-- Password Field -->
+        <VBox spacing="5">
+            <HBox spacing="5" alignment="CENTER_LEFT">
+                <Label text="Password" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d; -fx-font-weight: bold;"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Hyperlink fx:id="lnkForgotPassword" text="Forgot Password?"
+                           style="-fx-font-size: 11px; -fx-text-fill: #3498db; -fx-underline: false;"/>
+            </HBox>
+            <PasswordField fx:id="txtPassword"
+                           promptText="Enter password"
+                           style="-fx-font-size: 14px; -fx-pref-width: 300; -fx-pref-height: 45;
+                                  -fx-background-radius: 8; -fx-border-radius: 8; -fx-padding: 10;"/>
+        </VBox>
+
+        <!-- Remember Me Checkbox -->
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-pref-width: 300;">
+            <CheckBox fx:id="chkRememberMe" text="Remember me"
+                      style="-fx-font-size: 13px; -fx-text-fill: #7f8c8d;"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Hyperlink fx:id="lnkRegister" text="Create Account"
+                       style="-fx-font-size: 13px; -fx-text-fill: #3498db; -fx-underline: false;"/>
+        </HBox>
+
+        <!-- Error Message -->
+        <Label fx:id="lblError"
+               style="-fx-text-fill: #e74c3c; -fx-font-size: 12px; -fx-font-weight: bold; -fx-wrap-text: true; -fx-max-width: 300;"
+               visible="false"/>
+
+        <!-- Login Button with Progress -->
+        <VBox spacing="10" alignment="CENTER">
+            <Button fx:id="btnLogin" text="Login" onAction="#handleLogin"
+                    style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-pref-width: 300; -fx-pref-height: 50;
+                           -fx-background-color: linear-gradient(to right, #1a2980, #26d0ce); -fx-text-fill: white;
+                           -fx-background-radius: 8; -fx-cursor: hand; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);"/>
+            <ProgressIndicator fx:id="progressIndicator"
+                               visible="false"
+                               style="-fx-pref-height: 25; -fx-pref-width: 25;"/>
+        </VBox>
+
+        <!-- Status Message -->
+        <Label fx:id="lblStatus"
+               style="-fx-text-fill: #27ae60; -fx-font-size: 12px; -fx-font-weight: bold;"/>
+
+        <!-- Demo Credentials Section -->
+        <VBox spacing="10"
+              style="-fx-padding: 20; -fx-background-color: #f8f9fa; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #e0e0e0; -fx-border-width: 1;">
+            <Label text="📋 Demo Credentials"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+            <HBox spacing="20">
+                <!-- Students -->
+                <VBox spacing="5">
+                    <Label text="👨‍🎓 Students"
+                           style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                    <VBox spacing="2">
+                        <Label text="student1 / pass123"
+                               style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+                        <Label text="student2 / pass123"
+                               style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+                        <Label text="student3 / pass123"
+                               style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+                    </VBox>
+                </VBox>
+
+                <!-- Teachers -->
+                <VBox spacing="5">
+                    <Label text="👨‍🏫 Teachers"
+                           style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+                    <VBox spacing="2">
+                        <Label text="teacher1 / admin123"
+                               style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+                        <Label text="teacher2 / admin123"
+                               style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+                    </VBox>
+                </VBox>
+            </HBox>
+
+            <Label text="📍 Admin: admin / admin123"
+                   style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-padding: 5 0 0 0;"/>
+        </VBox>
+
+        <!-- Instructions & Warnings -->
+        <VBox spacing="5" alignment="CENTER">
+            <Label text="⚠️ Important Instructions"
+                   style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #f39c12;"/>
+            <Label text="1. Start the SECS Server first"
+                   style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+            <Label text="2. Use demo credentials for testing"
+                   style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+            <Label text="3. Contact admin for new accounts"
+                   style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+        </VBox>
+
+        <!-- Version & Copyright -->
+        <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+            <Label text="SECS v1.0.0"
+                   style="-fx-font-size: 10px; -fx-text-fill: #95a5a6;"/>
+            <Label text="•"
+                   style="-fx-font-size: 10px; -fx-text-fill: #95a5a6;"/>
+            <Label text="© 2024 Secure Exam Control System"
+                   style="-fx-font-size: 10px; -fx-text-fill: #95a5a6;"/>
+        </HBox>
+    </VBox>
+
+    <!-- Keyboard Shortcuts Hint -->
+    <Label text="💡 Tip: Press Enter to login • Ctrl+Q to quit"
+           style="-fx-font-size: 10px; -fx-text-fill: rgba(255,255,255,0.7); -fx-font-style: italic;"/>
+</VBox>
+        <!-- Developer Signature -->
+<HBox alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+<Label text="SECS v1.0 | Developer: Kuei Poch Kuei | Dilla University CS"
+       style="-fx-text-fill: #666666; -fx-font-size: 10px; -fx-font-style: italic;"/>
+</HBox>

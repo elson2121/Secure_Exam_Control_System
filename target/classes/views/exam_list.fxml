@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.secs.client.controllers.ExamListController">
+
+    <!-- Top Header -->
+    <top>
+        <VBox style="-fx-background-color: linear-gradient(to right, #1a2980, #26d0ce); -fx-padding: 20;">
+            <HBox alignment="CENTER_LEFT" spacing="20">
+                <VBox>
+                    <Label fx:id="lblWelcome" style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Label fx:id="lblExamCount" style="-fx-font-size: 14px; -fx-text-fill: #e0e0e0;"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <ProgressIndicator fx:id="progressIndicator" visible="false"
+                                   style="-fx-pref-height: 25; -fx-pref-width: 25;"/>
+                <Button fx:id="btnLogout" text="Logout" onAction="#handleLogout"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold;
+                               -fx-background-radius: 5; -fx-padding: 10 20;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- Center Content -->
+    <center>
+        <VBox spacing="25" alignment="CENTER" style="-fx-padding: 40;">
+            <Label text="📚 Available Exams" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+            <Label text="Select an exam to begin. Make sure you have stable internet connection."
+                   style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;"/>
+
+            <ListView fx:id="listExams" style="-fx-pref-width: 700; -fx-pref-height: 350; -fx-background-radius: 10;"/>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="btnStartExam" text="🚀 Start Exam" onAction="#handleStartExam"
+                        style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-pref-width: 180; -fx-pref-height: 50;
+                               -fx-background-color: linear-gradient(to right, #27ae60, #2ecc71); -fx-text-fill: white;
+                               -fx-background-radius: 8;"
+                        disable="true"/>
+
+                <Button fx:id="btnViewResults" text="📊 View Results" onAction="#handleViewResults"
+                        style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-pref-width: 180; -fx-pref-height: 50;
+                               -fx-background-color: linear-gradient(to right, #3498db, #2980b9); -fx-text-fill: white;
+                               -fx-background-radius: 8;"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Teacher Panel (Bottom) -->
+    <bottom>
+        <VBox fx:id="teacherPanel" style="-fx-background-color: #ecf0f1; -fx-padding: 20; -fx-border-color: #bdc3c7; -fx-border-width: 1 0 0 0;" visible="false">
+            <Label text="👨‍🏫 Teacher Panel" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <HBox spacing="15" style="-fx-padding: 15 0 0 0;">
+                <Button text="📝 Create New Exam" onAction="#handleCreateExam"
+                        style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold;
+                               -fx-background-radius: 5; -fx-padding: 10 20;"/>
+                <Button text="👥 Manage Students"
+                        style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold;
+                               -fx-background-radius: 5; -fx-padding: 10 20;"/>
+                <Button text="📈 View All Results"
+                        style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold;
+                               -fx-background-radius: 5; -fx-padding: 10 20;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
+        <!-- Developer Signature -->
+<HBox alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+<Label text="SECS v1.0 | Developer: Kuei Poch Kuei | Dilla University CS"
+       style="-fx-text-fill: #666666; -fx-font-size: 10px; -fx-font-style: italic;"/>
+</HBox>

@@ -1,0 +1,113 @@
+/* Glassmorphism Effects */
+.glass-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(168, 208, 230, 0.2);
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 25, 0.3, 0, 5);
+}
+
+/* Text Styling */
+.glass-text {
+    -fx-text-fill: rgba(255, 255, 255, 0.9);
+    -fx-font-family: 'Segoe UI';
+}
+
+/* Button Styling */
+.glass-button {
+    -fx-background-color: linear-gradient(to right, #3a7faa, #2a5d8a);
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 12px 30px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(58, 127, 170, 0.4), 15, 0.3, 0, 2);
+}
+
+.glass-button:hover {
+    -fx-background-color: linear-gradient(to right, #4ba1ca, #3a7faa);
+    -fx-effect: dropshadow(gaussian, rgba(75, 161, 202, 0.5), 20, 0.4, 0, 3);
+}
+
+/* Input Field Styling */
+.glass-input {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(168, 208, 230, 0.3);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-font-size: 14px;
+    -fx-padding: 12px;
+}
+
+.glass-input:focused {
+    -fx-border-color: rgba(168, 208, 230, 0.7);
+    -fx-effect: dropshadow(gaussian, rgba(168, 208, 230, 0.2), 10, 0, 0, 0);
+}
+
+/* ComboBox Styling */
+.glass-combo {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(168, 208, 230, 0.3);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-font-size: 14px;
+    -fx-padding: 12px;
+}
+
+.glass-combo .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(26, 59, 90, 0.95);
+}
+
+.glass-combo .list-view {
+    -fx-background-color: rgba(26, 59, 90, 0.95);
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(168, 208, 230, 0.3);
+    -fx-border-radius: 8;
+}
+
+/* Scrollbar Styling */
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: rgba(168, 208, 230, 0.4);
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: rgba(168, 208, 230, 0.6);
+}
+
+/* Label Styling */
+.title-label {
+    -fx-text-fill: rgba(255, 255, 255, 0.95);
+    -fx-font-family: 'Segoe UI';
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+}
+
+.subtitle-label {
+    -fx-text-fill: rgba(168, 208, 230, 0.8);
+    -fx-font-family: 'Segoe UI';
+    -fx-font-size: 13px;
+}
+
+/* Pane Background */
+.nature-background {
+    -fx-background-color: linear-gradient(to bottom, #0a1929, #3a7faa);
+}

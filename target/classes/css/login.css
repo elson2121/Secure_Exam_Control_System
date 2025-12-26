@@ -1,0 +1,44 @@
+/* Login Screen Custom Styles */
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: rgba(42, 93, 138, 0.95);
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+}
+
+.combo-box-popup .list-cell {
+    -fx-text-fill: white;
+    -fx-padding: 10 15;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: rgba(249, 200, 14, 0.3);
+}
+
+.combo-box .arrow {
+    -fx-background-color: #f9c80e;
+}
+
+/* TextField focus effects */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #f9c80e !important;
+    -fx-border-width: 2 !important;
+    -fx-effect: dropshadow(gaussian, rgba(249, 200, 14, 0.4), 10, 0.3, 0, 0);
+}
+
+/* ComboBox focus effects */
+.combo-box:focused {
+    -fx-border-color: #f9c80e !important;
+    -fx-border-width: 2 !important;
+}
+
+/* Hyperlink hover effect */
+.hyperlink:hover {
+    -fx-text-fill: #ffd166 !important;
+    -fx-underline: true;
+}

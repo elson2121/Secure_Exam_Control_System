@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.secs.client.controllers.ResultController"
+      alignment="CENTER" spacing="25"
+      style="-fx-background-color: linear-gradient(to bottom right, #3498db, #2c3e50);">
+
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <!-- Result Card -->
+    <VBox spacing="30" alignment="CENTER"
+          style="-fx-padding: 50; -fx-background-color: white; -fx-background-radius: 20;
+                 -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 20, 0, 0, 0);">
+
+        <!-- Title -->
+        <Label fx:id="lblExamTitle"
+               style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+        <!-- Score Circle -->
+        <StackPane>
+            <Circle radius="100" fill="#f8f9fa" stroke="#e9ecef" strokeWidth="3"/>
+            <VBox alignment="CENTER" spacing="5">
+                <Label fx:id="lblScore"
+                       style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+                <Label fx:id="lblPercentage"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+            </VBox>
+        </StackPane>
+
+        <!-- Status -->
+        <Label fx:id="lblStatus"
+               style="-fx-font-size: 36px; -fx-font-weight: bold;"/>
+
+        <!-- Congratulations -->
+        <Label fx:id="lblCongratulations"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+        <!-- Progress Bar -->
+        <VBox spacing="10" alignment="CENTER" style="-fx-padding: 20 0;">
+            <ProgressBar fx:id="progressBar" prefWidth="400" prefHeight="20"/>
+            <Label text="Performance Level"
+                   style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+        </VBox>
+
+        <!-- Details -->
+        <VBox fx:id="detailsBox" spacing="8" alignment="CENTER"
+              style="-fx-padding: 20; -fx-background-color: #f8f9fa; -fx-background-radius: 10;">
+            <!-- Details will be added dynamically -->
+        </VBox>
+
+        <!-- Time -->
+        <Label fx:id="lblTimeTaken"
+               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+
+        <!-- Buttons -->
+        <HBox spacing="25" alignment="CENTER" style="-fx-padding: 20;">
+            <Button fx:id="btnBack" text="Back to Exams" onAction="#handleBack"
+                    style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-pref-width: 180; -fx-pref-height: 50;
+                           -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5;"/>
+
+            <Button fx:id="btnViewDetails" text="View Details" onAction="#handleViewDetails"
+                    style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-pref-width: 180; -fx-pref-height: 50;
+                           -fx-background-color: #9b59b6; -fx-text-fill: white; -fx-background-radius: 5;"/>
+        </HBox>
+
+        <!-- Message -->
+        <Label text="Thank you for completing the exam! Your results have been saved."
+               style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-padding: 10;"/>
+
+    </VBox>
+</VBox>
+        <!-- Developer Signature -->
+<HBox alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+<Label text="SECS v1.0 | Developer: Kuei Poch Kuei | Dilla University CS"
+       style="-fx-text-fill: #666666; -fx-font-size: 10px; -fx-font-style: italic;"/>
+</HBox>
